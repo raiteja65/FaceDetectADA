@@ -3,5 +3,5 @@ function [varImg] = VarNorm(img);
 varImg = im2double(img);
 mean_val = mean(varImg(:));
 var_val = var(varImg(:));
-varImg = varImg/var_val;
+varImg = (varImg -mean_val)/var_val;
 varImg = im2uint8(mat2gray(varImg));
